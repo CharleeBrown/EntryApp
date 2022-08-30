@@ -1,17 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import * as React from "react";
+import {ChakraProvider} from '@chakra-ui/react';
+import { Box, Center, Image, Flex, Badge, Text } from "@chakra-ui/react";
+import { MdStar } from "react-icons/md"
 
 function App() {
   return (
+    <ChakraProvider>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Enter Option
         </p>
-        <input/>
+        <Text />
       </header>
     </div>
+    </ChakraProvider>
   );
 }
 
