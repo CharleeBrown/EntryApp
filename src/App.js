@@ -2,18 +2,18 @@
 import './App.css';
 import * as React from "react";
 import {ChakraProvider} from '@chakra-ui/react';
-import { Input, Text, Box } from "@chakra-ui/react";
+import { Input, Button, Text, Box } from "@chakra-ui/react";
 import {useState} from "react";
 
 function App() {
   const [user, setUser] = useState();
   function handleKey(event){
-    if(event.keyCode ===13){
+    
       sendData();
-    }
+    
   }
   function sendData(){
-    let rnd = (Math.random(0,10)*10).toPrecision(1);
+    let rnd = (Math.random(0,11)*10).toPrecision(1);
     //console.log(rnd);
     let url = "https://testing-api-one.herokuapp.com/";
     fetch(url)
@@ -22,12 +22,14 @@ function App() {
   }
   
   return (
-    <ChakraProvider>
+    <ChakraProvider onKeyDown={handleKey}> 
     <div className="App">
       <header className="App-header">
         <Box>
-        <Text></Text>
-        <Input placeholder="Enter Info" onKeyDown={handleKey}/>
+        <Button  colorScheme='blue'
+        onClick={handleKey}>Click for Random Name</Button>
+        {/* <Text >Press Enter for a Random Name</Text> */}
+        {/* <Input placeholder="Enter Info" onKeyDown={handleKey}/> */}
         <p>{user}</p>
 
         </Box>
