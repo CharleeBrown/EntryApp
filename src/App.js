@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import * as React from "react";
+import menu from './components/Menu';
 import {ChakraProvider} from '@chakra-ui/react';
 import { Input, Button, Text, Box } from "@chakra-ui/react";
 import {useState} from "react";
@@ -36,6 +37,7 @@ function App() {
         <p>{user}</p>
 
         </Box>
+        <Menu></Menu>
       </header>
     </div>
     </ChakraProvider>
