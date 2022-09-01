@@ -10,11 +10,11 @@ function DataGrab(){
   const [user, setUser] = useState();
   async function handleKey(event){
     
-    await sendData();
+    await reqData();
   
   }
   
-  async function sendData(){
+  async function reqData(){
       
     //console.log(rnd);
     let url = "https://testing-api-one.herokuapp.com/";
