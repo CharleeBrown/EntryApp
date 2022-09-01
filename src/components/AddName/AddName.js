@@ -1,12 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './AddName.module.css';
-import {ChakraProvider, Input, Text, Box, Button} from '@chakra-ui/react';
+import {ChakraProvider, Input, Box, Button} from '@chakra-ui/react';
 import {
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
 } from '@chakra-ui/react'
 import {useState} from 'react';
 function AddName(){ 
@@ -37,12 +34,7 @@ function AddName(){
 );
 }
 
-function clearit(){
-let clearDoc = document.getElementById('nameInput');
-clearDoc.innerHTML = "";
-clearDoc.innerText = "";
 
-}
 AddName.propTypes = {};
 
 AddName.defaultProps = {};
