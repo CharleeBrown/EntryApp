@@ -22,10 +22,13 @@ function DataGrab(){
     .then(res => res.json())
     .then((result) => {
       const names = result.filter(item => item.name)
-      const nameCount = names.length-1;
-      let rnd = Math.floor((Math.random() * nameCount) + 0);;
-      console.log(rnd);
-      setUser(result[rnd]["name"])
+      const nameCount = names.length;
+      console.log("Count of Names - " + nameCount);
+      let rnd = Math.floor((Math.random(0,nameCount)*nameCount)+1);
+      console.log("Index - " + rnd);
+      let newName = result[rnd]["name"];
+      console.log(newName);
+      setUser(newName);
     })
   }
   return (

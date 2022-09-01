@@ -11,31 +11,37 @@ import {
 import {useState} from 'react';
 function AddName(){ 
     let url = "https://mainsendapi.herokuapp.com/";
-    let testrl = "//localhost:3000/"
-    const [names, setName] = useState();
-
+    let [names, setName] = useState();
     const  sendName = event => {
       
-      fetch(testrl,
+      fetch(url,
         { method:'POST',
           mode: 'cors',
           headers:{
             'Content-Type': 'application/json'
           },
           body:JSON.stringify({name:names})
-        })
+        });
+        setName(null);
     }
   return (
     <ChakraProvider>
   <Box className={styles.AddName}>
     <FormControl>
       <FormLabel>Enter a Name</FormLabel>
-      <Input placeholder="Enter a name"  onChange={e=> setName(e.target.value)}></Input>
+      <Input id="nameInput" placeholder="Enter a name"  onChange={e=> setName(e.target.value)}></Input>
       <Button colorScheme="blue" onClick={sendName}>Add New Name</Button>
     </FormControl>
   </Box>
   </ChakraProvider>
 );
+}
+
+function clearit(){
+let clearDoc = document.getElementById('nameInput');
+clearDoc.innerHTML = "";
+clearDoc.innerText = "";
+
 }
 AddName.propTypes = {};
 
