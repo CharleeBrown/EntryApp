@@ -4,13 +4,13 @@ import styles from './AddName.module.css';
 import {ChakraProvider, Input, Text, Box, Button} from '@chakra-ui/react';
 import {useState} from 'react';
 function AddName(name){ 
-    let url = "data-api.fly.dev";
+    let url = "https://mainsendapi.herokuapp.com/";
     const [names, setName] = useState();
 
     const sendName = event => {
 
-      fetch(url,{method:'POST', body:JSON.stringify({names})})
-      console.log(names)
+      fetch(url,{ method:'POST', mode:'cors', body:JSON.stringify({names})})
+      console.log(JSON.stringify(names))
     }
   return (
     <ChakraProvider>
