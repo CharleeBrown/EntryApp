@@ -17,10 +17,12 @@ function AddName(){
       
       fetch(url,
         { method:'POST',
-          mode:'cors', 
-          headers:new Headers({"Content-type":"application/json"}),
-      body:JSON.stringify(names)})
-      console.log(JSON.stringify(names))
+          mode: 'cors',
+          headers:{
+            'Content-Type': 'application/json'
+          },
+          body:JSON.stringify({names})
+        })
     }
   return (
     <ChakraProvider>
