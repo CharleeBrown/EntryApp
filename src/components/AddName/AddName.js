@@ -7,9 +7,12 @@ function AddName(name){
     let url = "https://mainsendapi.herokuapp.com/";
     const [names, setName] = useState();
 
-    const sendName = event => {
-
-      fetch(url,{ method:'POST', mode:'cors', body:JSON.stringify({names})})
+    const  sendName = event => {
+      
+      fetch(url,
+        { method:'POST',
+          mode:'cors', 
+      body:JSON.stringify({names})})
       console.log(JSON.stringify(names))
     }
   return (
