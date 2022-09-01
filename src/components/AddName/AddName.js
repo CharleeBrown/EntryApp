@@ -11,17 +11,18 @@ import {
 import {useState} from 'react';
 function AddName(){ 
     let url = "https://mainsendapi.herokuapp.com/";
+    let testrl = "//localhost:3000/"
     const [names, setName] = useState();
 
     const  sendName = event => {
       
-      fetch(url,
+      fetch(testrl,
         { method:'POST',
           mode: 'cors',
           headers:{
             'Content-Type': 'application/json'
           },
-          body:JSON.stringify({names})
+          body:JSON.stringify({name:names})
         })
     }
   return (
