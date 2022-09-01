@@ -9,7 +9,7 @@ import {
   FormHelperText,
 } from '@chakra-ui/react'
 import {useState} from 'react';
-function AddName(name){ 
+function AddName(){ 
     let url = "https://mainsendapi.herokuapp.com/";
     const [names, setName] = useState();
 
@@ -19,7 +19,7 @@ function AddName(name){
         { method:'POST',
           mode:'cors', 
           headers:new Headers({"Content-type":"application/json"}),
-      body:JSON.stringify({names})})
+      body:JSON.stringify(names)})
       console.log(JSON.stringify(names))
     }
   return (
