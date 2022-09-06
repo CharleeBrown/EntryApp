@@ -5,12 +5,16 @@ import {
   FormControl,
   FormLabel,
 } from '@chakra-ui/react'
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 
 function AddName(){ 
+  
     let url = "https://mainsendapi.herokuapp.com/";
     let [names, setName] = useState();
+    useEffect(() =>{
+      document.getElementById("nameInput").innerHTML = "";
+    });
     const  sendName = event => {
       
       fetch(url,
@@ -21,7 +25,7 @@ function AddName(){
           },
           body:JSON.stringify({name:names})
         });
-        setName(null);
+        setName('');
     }
   return (
     <ChakraProvider>
@@ -29,7 +33,7 @@ function AddName(){
     <FormControl>
       <FormLabel>Enter a Name</FormLabel>
       <Input id="nameInput" placeholder="Enter a name"  onChange={e=> setName(e.target.value)}></Input>
-      <Button colorScheme="blue" onClick={sendName}>Add New Name</Button>
+      <Button colorScheme="blue" onClick={() => sendName}>Add New Name</Button>
     </FormControl>
   </Box>
   </ChakraProvider>

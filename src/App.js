@@ -12,10 +12,12 @@ function App() {
     <ChakraProvider>
     <div className="App">
       <header className="App-header">
-        <Box p='10'>
+        <Box p='10' border="solid 1px white" borderRadius="10px">
           <DataGrab></DataGrab>
           </Box>
+        <Box p='10'>
         <AddName></AddName>
+        </Box>
       </header>
     </div>
     </ChakraProvider>
