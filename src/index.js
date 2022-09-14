@@ -29,22 +29,17 @@ function withRouter(Component) {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-     
           <Route exact path="/" element={<App/>}>
           </Route>
           <Route path="/about" component={withRouter(About)}>
           </Route>
-          
         </Routes>
     <App />
-    
     </BrowserRouter>
   </React.StrictMode>
-  
 );
 
 
