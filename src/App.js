@@ -9,7 +9,6 @@ import AddName from './components/AddName/AddName';
 import Menu from './components/Menu/Menu';
 function App() {
 
-  
   return (
     <ChakraProvider>
     <div className="App">
