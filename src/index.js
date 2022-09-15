@@ -36,6 +36,7 @@ root.render(
           </Route>
           <Route path="/about" component={withRouter(About)}>
           </Route>
+          
         </Routes>
     <App />
     </BrowserRouter>

@@ -23,8 +23,14 @@ function App() {
         <AddName></AddName>
         </Box>
       </header>
+      <footer>  <noscript>You need to enable JavaScript to run this app.</noscript>
+<a title="Google Analytics Alternative" href="https://clicky.com/101380580"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+<script async src="//static.getclicky.com/101380580.js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101380580ns.gif" /></p></noscript></footer>
     </div>
+    
     </ChakraProvider>
+    
   );
 
 }
