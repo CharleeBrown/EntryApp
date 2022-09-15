@@ -21,7 +21,6 @@ function App() {
           </Box>
         <Box p='10'>
         <AddName></AddName>
-        <Menu></Menu>
         </Box>
       </header>
     </div>
