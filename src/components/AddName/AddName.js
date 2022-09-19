@@ -12,12 +12,9 @@ import {useState, useEffect} from 'react';
 function AddName(){ 
   
     let url = "https://mainsendapi.herokuapp.com/";
-    let [names, setName] = useState();
-    useEffect(() =>{
-      document.getElementById("nameInput").innerHTML = "";
-    });
-    const  sendName = event => {
-      
+    let [names, setName] = useState("");
+    console.log("TEST");
+    const  sendName = () => {
       fetch(url,
         { method:'POST',
           mode: 'cors',
@@ -26,7 +23,12 @@ function AddName(){
           },
           body:JSON.stringify({name:names})
         });
-        setName('');
+        console.log("TEST");
+        handleClick();
+    }
+    const handleClick = () =>{
+      setName(" ");
+      console.log("TEST");
     }
   return (
     <ChakraProvider>
