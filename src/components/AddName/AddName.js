@@ -10,10 +10,14 @@ import {useState, useEffect} from 'react';
 
 
 function AddName(){ 
-  
+
     let url = "https://mainsendapi.herokuapp.com/";
-    let [names, setName] = useState("");
-    console.log("TEST");
+    let [names, setName] = useState("testers");
+    //console.log("TEST");
+  
+    const handleClick = () =>{
+      var x = "";
+    }
     const  sendName = () => {
       fetch(url,
         { method:'POST',
@@ -23,20 +27,17 @@ function AddName(){
           },
           body:JSON.stringify({name:names})
         });
-        console.log("TEST");
         handleClick();
     }
-    const handleClick = () =>{
-      setName(" ");
-      console.log("TEST");
-    }
+
+    //https://stackoverflow.com/questions/54069253/the-usestate-set-method-is-not-reflecting-a-change-immediately
   return (
     <ChakraProvider>
   <Box className={styles.AddName}>
     <FormControl>
       <FormLabel>Enter a Name</FormLabel>
       <Input id="nameInput" placeholder="Enter a name"  onChange={e=> setName(e.target.value)}></Input>
-      <Button colorScheme="blue" onClick={() => sendName}>Add New Name</Button>
+      <Button colorScheme="blue" onClick={sendName}>Add New Name</Button>
     </FormControl>
   </Box>
   </ChakraProvider>
